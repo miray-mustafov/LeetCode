@@ -1,23 +1,16 @@
 def isValid(s):
     ocp = {'(': ')', '[': ']', '{': '}'}  # open: closed dictionary
     opens = []
-    closes = []
     if len(s) % 2 == 1:  # s4 = "(" False
         return False
 
     for char in s:
         if char in ocp:
             opens.append(char)
-        else:
-            closes.append(char)  # for "((" edge case
-            if not opens or ocp[opens.pop()] != char:
+        elif not opens or ocp[opens.pop()] != char:
                 return False
 
-    # "(("
-    if not closes or len(opens) - len(closes) >= 0:  # "[[[]" "[[[[]]"
-        return False
-
-    return True
+    return True if not opens else False
 
 
 s = "()"
