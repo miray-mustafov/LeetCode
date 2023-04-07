@@ -1,5 +1,3 @@
-
-
 def mergeTwoLists(list1, list2):
     # Covering empty list edges
     if not list1 and not list2:
