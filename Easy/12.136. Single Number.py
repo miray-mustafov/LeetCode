@@ -16,9 +16,17 @@ def single_number(nums):  # runtime (On) space (On)
     return num_set.pop()
 
 
+def single_number_xor(nums):
+    result = 0
+    for num in nums:
+        result = num ^ result
+    return result
+
+
 nums = [2, 2, 1]
-nums2 = [4, 1, 2, 1, 2]
+nums2 = [1, 2, 4, 1, 2]
 nums3 = [1]
-print(single_number(nums))
 print(single_number(nums2))
-print(single_number(nums3))
+print(single_number_xor(nums2))
+print(single_number_xor(nums3))
+print(single_number_xor(nums))
