@@ -23,10 +23,12 @@ def single_number_xor(nums):
     return result
 
 
-nums = [2, 2, 1]
-nums2 = [1, 2, 4, 1, 2]
-nums3 = [1]
-print(single_number(nums2))
-print(single_number_xor(nums2))
-print(single_number_xor(nums3))
+nums = [1, 2, 4, 1, 2]
+nums2 = [0, 1, 2, 1, 2]
+nums3 = [9, 2, 9]
+nums_invalid_input = [4, 1, 2, 1, 2, 4]
+print(single_number(nums))
 print(single_number_xor(nums))
+print(single_number_xor(nums2))
+print(single_number_xor(nums_invalid_input))
+print(single_number_xor(nums3))
