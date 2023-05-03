@@ -1,6 +1,6 @@
 class Node:
-    def __init__(self, data):
-        self.data = data
+    def __init__(self, val):
+        self.data = val
         self.left = None
         self.right = None
 
@@ -13,7 +13,7 @@ def inorderTraversal(root):
         if not node: return
 
         inorder(node.left)
-        res.append(node.data)
+        res.append(node.val)
         inorder(node.right)
 
     res = []
