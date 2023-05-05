@@ -6,10 +6,11 @@ def removeDuplicates(nums):
         else:
             curr_i += 1
             nums[curr_i], nums[i] = nums[i], nums[curr_i]
-    return curr_i + 1, nums
+    return curr_i + 1
+
 
 nums = [1, 1, 2]  # [1,2,_]
 nums2 = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]  # [0,1,2,3,4,_,_,_,_,_]
 
-print('k =', removeDuplicates(nums))
-print('k =', removeDuplicates(nums2))
+print('k =', removeDuplicates(nums), nums)
+print('k =', removeDuplicates(nums2), nums2)
