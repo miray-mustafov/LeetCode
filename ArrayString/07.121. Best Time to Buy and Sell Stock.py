@@ -17,4 +17,3 @@ prices2 = [10, 100, 7, 1, 5, 3, 6, 4]
 prices3 = [5, 100, 6, 7, 4, 90, ]
 print(max_profit_stock(prices))
 print(max_profit_stock(prices3))
-
