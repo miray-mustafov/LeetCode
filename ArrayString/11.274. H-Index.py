@@ -7,6 +7,8 @@ def hIndex(citations):
 
 
 citations = [4, 0, 6, 1, 5]
+nums = [0, 1, 4, 5, 6]
 citations2 = [1, 3, 1]
 print(hIndex(citations))
 print(hIndex(citations2))
+print(hIndex(nums))
