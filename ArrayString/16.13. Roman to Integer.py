@@ -1,4 +1,4 @@
-def roman(s):
+def to_integer(s):
     ROMANS = {
         'I': 1,
         'V': 5,
@@ -17,4 +17,4 @@ def roman(s):
     return result + ROMANS[s[-1]]
 
 
-print(roman("MCMXCIV"))
+print(to_integer("MCMXCIV"))
