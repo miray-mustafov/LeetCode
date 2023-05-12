@@ -1,3 +1,4 @@
+# My solution faster
 def convert(s, numRows):
     if numRows == 1:
         return s
@@ -28,8 +29,21 @@ def convert(s, numRows):
     return output
 
 
+def tutorial(s, numRows):
+    if numRows == 1: return s
+
+    res = ''
+    increment = 2 * (numRows - 1)
+    for r in range(numRows):
+        for i in range(r, len(s), increment):
+            res += s[i]
+            if 0 < r < numRows - 1 and i + increment - 2 * r < len(s):
+                res += s[i + increment - 2 * r]
+    return res
+
+
 s = 'PAYPALISHIRING'
 n = 3
-print(convert(s, 4))
-print(convert(s, 3) == 'PAHNAPLSIIGYIR')
-print(convert(s, 4) == 'PINALSIGYAHRPI')
+print(tutorial(s, 4))
+print(tutorial(s, 3) == 'PAHNAPLSIIGYIR')
+print(tutorial(s, 4) == 'PINALSIGYAHRPI')
