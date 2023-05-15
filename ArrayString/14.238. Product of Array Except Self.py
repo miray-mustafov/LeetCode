@@ -7,7 +7,7 @@ def pes_division_On(nums):
     for i in range(N):
         if nums[i] == 0:
             if zero_idx != -1:
-                return N * [0]  # When zeroes count > 1 in nums
+                return N * [0]  # When zeroes count > 1 in n
             zero_idx = i
             continue
         product_all *= nums[i]
@@ -15,7 +15,7 @@ def pes_division_On(nums):
     if zero_idx != -1:
         answer = [0] * N
         answer[zero_idx] = product_all
-        return answer  # When zeroes count is 1 in nums
+        return answer  # When zeroes count is 1 in n
 
     answer = []
     for i in range(N):

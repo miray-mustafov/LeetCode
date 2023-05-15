@@ -16,5 +16,5 @@ def removeElement(nums, val):
 
 nums = [0, 1, 2, 2, 3, 0, 4, 2]
 val = 2
-print(removeElement(nums, val))  # Output: 5, nums = [0,1,4,0,3,_,_,_]
+print(removeElement(nums, val))  # Output: 5, n = [0,1,4,0,3,_,_,_]
 print(removeElement([1], 1))

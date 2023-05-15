@@ -17,4 +17,4 @@ def jump_dp(nums, num, i, jumps):
 
 nums = [2, 3, 1, 1, 4]
 print(jump(nums))
-# print(jump_dp(nums, nums[0], 0, 0))
+# print(jump_dp(n, n[0], 0, 0))

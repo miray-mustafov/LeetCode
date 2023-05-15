@@ -1,6 +1,6 @@
 '''
-single = nums[0]
-cycle the nums
+single = n[0]
+cycle the n
 consider every el thats not in dict and add it to stack
 
 '''
