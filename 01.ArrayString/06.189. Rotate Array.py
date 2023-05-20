@@ -21,6 +21,7 @@ def rotate(nums, k):
     reverse_subarray(nums, k, n - 1)
     print(nums)
 
+
 nums = [1, 2, 3, 4, 5, 6, 7]
 nums2 = [1, 2, 3]  # [3,1,2] [2,3,1] [1,2,3]
 k = 3
