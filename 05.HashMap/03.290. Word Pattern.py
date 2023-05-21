@@ -2,19 +2,14 @@ def f(pattern, s):  # O(m+n)
     s = s.split()
     if len(s) != len(pattern):
         return False
-    d, sett = {}, set()
-    for i in range(len(s)):
-        if pattern[i] not in d:
-            if s[i] in sett:
-                return False
-            else:
-                d[pattern[i]] = s[i]
-                sett.add(s[i])
-        else:
-            if s[i] not in sett:
-                return False
-            elif s[i] != d[pattern[i]]:
-                return False
+    word_char, char_word = {}, {}
+    for ch, w in zip(pattern, s):
+        if ch in char_word and char_word[ch] != w:
+            return False
+        if w in word_char and word_char[w] != ch:
+            return False
+        char_word[ch] = w
+        word_char[w] = ch
     return True
 
 
