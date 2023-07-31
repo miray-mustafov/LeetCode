@@ -7,4 +7,4 @@ def sumNumbers(root):
             return num
         return dfs(cur.left, num) + dfs(cur.right, num)
 
-    return dfs(root, root.val)
+    return dfs(root, 0)
