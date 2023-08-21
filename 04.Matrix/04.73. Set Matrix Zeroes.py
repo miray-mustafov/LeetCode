@@ -12,6 +12,9 @@ def setZeroes(matrix):
 
     [print(row) for row in matrix]
 
+def setZeroesO1(matrix):
+    pass
+
 
 matrix = [
     [5, 0, 9, 11],
