@@ -8,4 +8,4 @@ def f(columnNumber):
     return res[::-1]
 
 
-print(f(701))
+print(f(1500))
