@@ -40,20 +40,34 @@ def stairs3steps(n):
     return d
 
 
+# time O(nk) space O(n)
 def stairsKsteps(n, k):
     dp = [0] * (n + 1)
     dp[0], dp[1] = 1, 1
     for i in range(2, n + 1):
-        for j in range(1, k+1):
+        for j in range(1, k + 1):
             if i - j < 0:
                 break
             dp[i] += dp[i - j]
     return dp[n]
 
 
+# time O(nk) space O(k)
+def stairsKstepsOkspace(n, k):
+    dp = [0] * k
+    dp[0] = 1
+    for i in range(1, n + 1):
+        for j in range(1, k):
+            if i - j < 0:
+                break
+            dp[i % k] += dp[(i - j) % k]
+    return dp[n % k]
+
+
 n = 6
-k = 6
+k = 3
 print(f'To reach {n} stairs there are {stairs(n)} ways')
 print('stairs2 ' + str(stairs2(n)))
 print('stairs3steps ' + str(stairs3steps(n)))
 print(stairsKsteps(n, k))
+print(stairsKstepsOkspace(n,k))
