@@ -7,7 +7,7 @@ def rob(nums):
             rob2 = temp
         return rob2
 
-    return max(helper(nums[1:]), helper(nums[:-1]))
+    return max(nums[0], helper(nums[1:]), helper(nums[:-1]))
 
 
 nums = [2, 3, 4, 4]
