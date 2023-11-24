@@ -7,6 +7,15 @@ def uniquePaths(m, n):  # space O(m*n)
 
     return dp[m - 1][n - 1]
 
+    # Also possible approach
+    # dp = [[0] * n for _ in range(m)]
+    #
+    # for i in range(1, m):
+    #     for j in range(1, n):
+    #         dp[i][j] = 1 + dp[i - 1][j] + dp[i][j - 1]
+    #
+    # return 1 + dp[m - 1][n - 1]
+
 
 def uniquePaths2(m, n):  # space On
     dp = [1] * n  # Initialize a 1D array with all elements set to 1
@@ -25,7 +34,7 @@ def uniquePaths3(m, n):  # O(1) Math factorial calculations may become impractic
     return math.factorial(total_moves) // (math.factorial(down_moves) * math.factorial(total_moves - down_moves))
 
 
-m = 3
+m = 4
 n = 7
 # Output: 28
 print(uniquePaths(m, n))
