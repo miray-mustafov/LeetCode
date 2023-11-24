@@ -14,7 +14,7 @@ def uniquePathsIIadjustedInput(obstacleGrid):
 # print(uniquePathsIIadjustedInput(grid))
 
 
-def uniquePathsII(grid):
+def uniquePathsII(grid):  # time Om+n space On
     m, n = len(grid), len(grid[0])
     dp = [0] * n
     dp[n - 1] = 1
@@ -27,9 +27,26 @@ def uniquePathsII(grid):
     return dp[0]
 
 
-grid = [[0, 0, 0], [0, 1, 0], [0, 0, 0]]
+def uniquePathsIItable(grid):
+    m, n = len(grid), len(grid[0])
+    dp = [[0] * (n + 1) for _ in range(m + 1)]
+    dp[m - 1][n - 1] = 1
+    for r in reversed(range(m)):
+        for c in reversed(range(n)):
+            if grid[r][c]:
+                dp[r][c] = 0
+            else:
+                dp[r][c] += dp[r + 1][c] + dp[r][c + 1]
+    return dp[0][0]
+
+
+grid = [[0, 0, 0, 0], [0, 1, 0, 0], [0, 0, 0, 0]]
 grid2 = [[0, 1], [0, 0]]
 grid3 = [[0, 1], [1, 0]]
+print(uniquePathsIItable(grid))
+print(uniquePathsIItable(grid2))
+print(uniquePathsIItable(grid3))
+print()
 print(uniquePathsII(grid))
 print(uniquePathsII(grid2))
 print(uniquePathsII(grid3))
