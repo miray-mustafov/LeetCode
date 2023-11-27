@@ -17,7 +17,6 @@ def decode2(encoded, first):
 
 encoded = [1, 2, 3]
 first = 1
-# Output: [1,0,2,1]
 encoded2 = [1, 2, 3]
 print(decode(encoded, first))
 print(decode2(encoded2, first))
