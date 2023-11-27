@@ -15,7 +15,20 @@ def sumIndicesWithKSetBits(nums, k):  # My low efficiency solution
 def tutorial(nums, k):
     sum = 0
     for index, x in enumerate(nums):
+        # if index.bit_count() == k: # higher Python version needed for that function
         if bin(index).count('1') == k:
+            sum += x
+    return sum
+
+
+def my(nums, k):
+    sum = 0
+    for index, x in enumerate(nums):
+        count = 0
+        for el in str(bin(index))[2:]:
+            if el == '1':
+                count += 1
+        if count == k:
             sum += x
     return sum
 
@@ -24,3 +37,4 @@ nums = [5, 10, 1, 5, 2]
 k = 1
 print(sumIndicesWithKSetBits(nums, k))  # Output: 13 (10 + 1 + 3)
 print(tutorial(nums, k))
+print(my(nums, k))
