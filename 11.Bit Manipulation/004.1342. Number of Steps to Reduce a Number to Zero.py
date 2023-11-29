@@ -13,6 +13,6 @@ def numSteps1line(num):
     return len(bin(num)[2:]) + bin(num).count('1') - 1
 
 
-num = 14
+num = 15
 print(numSteps(num))
 print(numSteps1line(num))
