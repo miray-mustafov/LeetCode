@@ -1,5 +1,5 @@
 def f(allowed, words):
-    allowed = set([x for x in allowed])
+    allowed = set(allowed)
     res = 0
     for word in words:
         is_allowed = True
@@ -11,6 +11,17 @@ def f(allowed, words):
             res += 1
     return res
 
+
+def f2(allowed, words):
+    allowed = set(allowed)
+    res = 0
+    for word in words:
+        if all(x in allowed for x in word):
+            res += 1
+    return res
+
+
 allowed = "abc"
-words = ["a", "b", "c", "ab", "ac", "bc", "abc"]
-print(f(allowed, words))
+words = ["acbbs", "b", "c", "ab", "ac", "bc", "abc"]
+# print(f(allowed, words))
+print(f2(allowed, words))
