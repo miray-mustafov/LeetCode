@@ -1,4 +1,3 @@
-# 231. Power of Two
 def powerOfFour(n):
     pow = 1
     while pow < n:
