@@ -15,7 +15,7 @@ def longestNiceSubstring2(s):  # On^3
     return res
 
 
-def longestNiceSubstring(s):
+def longestNiceSubstring(s):  # possible optimization with memoization but won't decrease fundamentally the time compl
     def dfs(string):
         if len(string) < 2:
             return ''
