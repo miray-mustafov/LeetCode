@@ -1,4 +1,4 @@
-def longestNiceSubstring(s):  # On^3
+def longestNiceSubstring2(s):  # On^3
     N, res = len(s), ''
 
     def is_nice(start, end):
@@ -15,22 +15,21 @@ def longestNiceSubstring(s):  # On^3
     return res
 
 
-def longestNiceSubstring2(s):  # Onlogn
-    if len(s) < 2:
-        return ""
+def longestNiceSubstring(s):
+    def dfs(string):
+        if len(string) < 2:
+            return ''
 
-    def is_nice(sub):
-        return all(ch.swapcase() in sub for ch in sub)
+        hashset = set(string)
+        for i, s in enumerate(string):
+            if string[i].swapcase() not in hashset:
+                left = dfs(string[:i])
+                right = dfs(string[i + 1:])
+                return left if len(left) >= len(right) else right
 
-    mid = len(s) // 2
+        return string
 
-    left_substring = longestNiceSubstring(s[:mid])
-    right_substring = longestNiceSubstring(s[mid:])
-
-    if is_nice(s):
-        return s
-
-    return max(left_substring, right_substring, key=len)
+    return dfs(s)
 
 
 s = 'YazaAay'
