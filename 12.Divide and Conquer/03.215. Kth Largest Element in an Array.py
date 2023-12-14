@@ -26,12 +26,22 @@ def findKthLargest3(nums, k):
     return nums[-k]
 
 
-nums, k = [3, 2, 1, 5, 6, 4], 2  # Output: 5
+def findKthLargest2(nums, k):
+    import heapq
+    min_heap = nums[:k]
+    heapq.heapify(min_heap)
+
+    for num in nums[k:]:
+        if num > min_heap[0]:
+            heapq.heappushpop(min_heap, num)
+
+    return min_heap[0]
+
+
+nums, k = [3, 6, 1, 0, 7, 5, 2, 4], 3  # Output: 5
 nums2, k2 = [3, 2, 3, 1, 2, 4, 5, 5, 6], 4  # Output: 4
 
-# print(findKthLargest(nums, k))
-# print(findKthLargest(nums2, k2))
-# print(findKthLargest(nums, k))
-# print(findKthLargest(nums2, k2))
-print(findKthLargest3(nums, k))
-print(findKthLargest3(nums2, k2))
+print(findKthLargest2(nums.copy(), k))
+print(findKthLargest2(nums2.copy(), k2))
+print(findKthLargest3(nums.copy(), k))
+print(findKthLargest3(nums2.copy(), k2))
