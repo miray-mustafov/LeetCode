@@ -15,7 +15,7 @@ def singleNonDuplicate(nums):
             l = m + 1
 
 
-nums = [1, 1, 2, 3, 3, 4, 4, 8, 8]
+nums = [2, 1, 1, 3, 3, 4, 4, 8, 8]
 nums2 = [3, 3, 7, 7, 10, 11, 11]
 print(singleNonDuplicate(nums))
 print(singleNonDuplicate(nums2))
