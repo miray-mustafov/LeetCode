@@ -9,7 +9,8 @@ def twoOutOfThree(nums1, nums2, nums3):
 
     return list(result_set)
 
+
 nums1 = [1, 1, 3, 2]
 nums2 = [2, 3]
 nums3 = [3]
-print(twoOutOfThree(nums1, nums2, nums3))
+print(twoOutOfThree(nums1.copy(), nums2.copy(), nums3.copy()))
