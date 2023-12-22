@@ -45,10 +45,10 @@ def can_jump_greedy(nums):
     return True if goal == 0 else False
 
 
-nums_true = [2, 3, 1, 1, 4]
+nums_true = [2, 3, 1, 1, 3]
 nums_true2 = [6, 4, 2, 1, 0, 4]
 nums_true3 = [2, 0, 4, 2, 1, 0, 1, 4]
 nums_false = [2, 0, 3, 2, 1, 0, 4]
 nums_false2 = [1, 0, 3, 2, 0, 4]
-nums_false3 = [3, 0, 0, 0]
-print(can_jump_greedy(nums_false3))
+nums_true4 = [3, 0, 0, 0]
+print(can_jump_greedy(nums_true))

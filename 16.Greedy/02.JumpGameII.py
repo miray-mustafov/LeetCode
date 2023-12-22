@@ -11,10 +11,6 @@ def jump(nums):
     return res
 
 
-def jump_dp(nums, num, i, jumps):
-    pass
-
-
-nums = [2, 3, 1, 1, 4]
+nums = [3, 2, 1, 3, 1, 1, 4]
 print(jump(nums))
 # print(jump_dp(n, n[0], 0, 0))
