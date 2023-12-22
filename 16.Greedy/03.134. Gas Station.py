@@ -36,15 +36,12 @@ gas = [1, 2, 3, 4, 5]
 cost = [3, 4, 5, 1, 2]
 cost_too_expensive = [3, 4, 5, 2, 2]
 
-print(gasStation(gas, cost))  # 3
-print(gasStation(gas, cost_too_expensive))  # -1
 print(gs(gas, cost))
 print(gs(gas, cost_too_expensive))
 
 gas2 = [5, 1, 2, 3, 4]
 cost2 = [4, 4, 1, 5, 1]
 print(gs(gas2, cost2))
-print(gasStation(gas2, cost2))
 '''
 set tank to 0
 loop thr gas stations
