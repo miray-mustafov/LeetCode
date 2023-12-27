@@ -12,7 +12,7 @@ def countGoodSubstrings2(s):
 
 
 s = "xyzzaz"  # 1
-s2 = "aabаbcabc"  # 4
+s2 = "aababcabc"  # 4
 print(countGoodSubstrings(s))
 print(countGoodSubstrings(s2))
 print()
