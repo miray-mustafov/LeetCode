@@ -1,22 +1,17 @@
-# 2379. Minimum Recolors to Get K Consecutive Black Blocks
 def minimumRecolors(blocks, k):
-    from collections import deque
-    min_W_inwindow = float('inf')
     cur_W_inwindow = 0
-    queue = deque()
-    for color in blocks[:k]:
-        if color == 'W':
+    for i in blocks[:k]:
+        if i == 'W':
             cur_W_inwindow += 1
-        queue.append(color)
 
-    min_W_inwindow = min(min_W_inwindow, cur_W_inwindow)
-    for color in blocks[k:]:
-        if color == 'W':
+    min_W_inwindow = cur_W_inwindow
+    for i in range(k, len(blocks)):
+        if blocks[i] == 'W':
             cur_W_inwindow += 1
-        if queue.popleft() == 'W':
+        if blocks[i - k] == 'W':
             cur_W_inwindow -= 1
-        queue.append(color)
         min_W_inwindow = min(min_W_inwindow, cur_W_inwindow)
+
     return min_W_inwindow
 
 
