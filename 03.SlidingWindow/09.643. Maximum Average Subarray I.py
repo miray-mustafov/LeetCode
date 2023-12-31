@@ -8,5 +8,6 @@ def findMaxAverage(nums, k):
 
 nums, k = [1, 12, -5, -6, 50, 3], 4  # Output: 12.75000
 nums2, k2 = [5], 1  # Output: 5.00000
+
 print(findMaxAverage(nums, k))
 print(findMaxAverage(nums2, k2))
