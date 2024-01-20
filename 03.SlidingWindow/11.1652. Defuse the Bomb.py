@@ -3,7 +3,6 @@ def decrypt(code, k):
     if k == 0:
         return [0] * n
 
-    # todo def helper()
     cur_sum, res = 0, []
     if k > 0:
         for i in range(1, k + 1):  # can optimize for abs(k)>n
