@@ -1,4 +1,5 @@
 #.gitignore #Ignore it itselft first
+# goodone
 .idea/
 __pycache__/
 *.pyc
