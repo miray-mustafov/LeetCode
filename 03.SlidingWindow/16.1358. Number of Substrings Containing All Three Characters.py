@@ -1,18 +1,16 @@
-def numberOfSubstrings(s: str):
-    n, l, r = len(s), 0, 0
+def numberOfSubstrings(s):
     abc = {'a': 0, 'b': 0, 'c': 0}
-    res = 0
-    while r < n:
+    l = res = 0
+    for r in range(len(s)):
         abc[s[r]] += 1
         while abc['a'] and abc['b'] and abc['c']:
-            res += n - r
             abc[s[l]] -= 1
+            res += len(s) - r
             l += 1
-        r += 1
     return res
 
 
-s = "abccbac"
+s = "abcabc"
 print(numberOfSubstrings(s))
 s = "aaacb"
 print(numberOfSubstrings(s))
