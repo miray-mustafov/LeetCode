@@ -20,21 +20,30 @@ def sol(nums):
     return res
 
 
+def count_complete_subarrays(nums):
+    def is_complete(sub_count, total_count):
+        return sub_count == total_count
+
+    total_nums_count = len(set(nums))  # Total distinct elements in the array
+    l = res = 0
+    d = {}
+    for r, num in enumerate(nums):
+        d[num] = d.get(num, 0) + 1
+
+        while is_complete(len(d), total_nums_count):
+            d[nums[l]] -= 1
+            if d[nums[l]] == 0:
+                del d[nums[l]]
+            res += len(nums) - r
+            l += 1
+
+    return res
+
+
 nums = [1, 3, 1, 2, 2]  # 4
 nums2 = [1, 3, 1, 2, 2, 2]  # 6
 print(sol(nums))
 print(sol(nums2))
-"""
-def numberOfSubstrings(s: str):
-    n, l, r = len(s), 0, 0
-    abc = {'a': 0, 'b': 0, 'c': 0}
-    res = 0
-    while r < n:
-        abc[s[r]] += 1
-        while abc['a'] and abc['b'] and abc['c']:
-            res += n - r
-            abc[s[l]] -= 1
-            l += 1
-        r += 1
-    return res
-"""
+print()
+print(count_complete_subarrays(nums))
+print(count_complete_subarrays(nums2))
