@@ -1,23 +1,17 @@
-def maxConsecutiveAnswers(answerKey, k):
-    def max_consecutive_answers_helper(s, k, target_char):
-        ans = l = r = cnt = 0
-
-        while r < len(s):
-            if s[r] == target_char:
-                cnt += 1
-            while cnt > k:
-                if s[l] == target_char:
-                    cnt -= 1
+def maxConsecutiveAnswers(s, k):
+    def helper(s, k, ch):
+        l = res = ch_counter = 0
+        for r in range(len(s)):
+            ch_counter += 1 if s[r] == ch else 0
+            while ch_counter > k:
+                ch_counter -= 1 if s[l] == ch else 0
                 l += 1
-            ans = max(ans, r - l + 1)
-            r += 1
+            res = max(res, r - l + 1)
+        return res
 
-        return ans
-
-    result_t = max_consecutive_answers_helper(answerKey, k, 'F')
-    result_f = max_consecutive_answers_helper(answerKey, k, 'T')
-
-    return max(result_t, result_f)
+    max_Ts = helper(s, k, 'F')
+    max_Fs = helper(s, k, 'T')
+    return max(max_Fs, max_Ts)
 
 
 s = "TFFTFTFTT"
