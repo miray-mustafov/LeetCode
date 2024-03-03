@@ -1,20 +1,4 @@
 # goodone
-def poorattempt(nums, k):
-    res = r = l = 0
-    counter = 0
-    while r < len(nums):
-        if nums[r] % 2 == 1:
-            counter += 1
-        while counter >= k:
-            if nums[l] % 2 == 1:
-                counter -= 1
-            res += len(nums) - r
-            l += 1
-
-        r += 1
-    return res
-
-
 def solution2(nums, k):
     def atMost(nums, k):
         res = l = 0
