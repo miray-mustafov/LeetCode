@@ -16,6 +16,25 @@ def f(fruits):
     return max(res, sum(baskets.values()))
 
 
+def neetcode(fruits):
+    from collections import defaultdict
+    baskets = defaultdict(int)
+    l = total = res = 0
+    for r in range(len(fruits)):
+        baskets[fruits[r]] += 1
+        total += 1
+        while len(baskets) > 2:
+            lf = fruits[l]
+            baskets[lf] -= 1
+            total -= 1
+            if not baskets[lf]:
+                baskets.pop(lf)
+            l += 1
+        res = max(res, total)
+    return res
+
+
 fruits = [1, 2, 3, 2, 2]  # 4
 print(f(fruits))
+print(neetcode(fruits))
 fruits = [1, 2, 3, 2, 2]  # 4
