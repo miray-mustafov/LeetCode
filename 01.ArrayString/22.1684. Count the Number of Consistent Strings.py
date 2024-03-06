@@ -23,5 +23,5 @@ def f2(allowed, words):
 
 allowed = "abc"
 words = ["acbbs", "b", "c", "ab", "ac", "bc", "abc"]
-# print(f(allowed, words))
+# print(f2(allowed, words))
 print(f2(allowed, words))
