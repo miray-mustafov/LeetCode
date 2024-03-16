@@ -52,6 +52,6 @@ nums = [449, 154, 934, 526, 429, 732, 784, 909, 884, 805, 635, 660, 742, 209, 74
 print(f(nums))
 print(f2(nums))  # res 30934
 
-from compare_time import compare_time_of2
+from utils.compare_time import compare_time_of2
 
 compare_time_of2(f, f2, nums)
