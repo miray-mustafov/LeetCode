@@ -1,4 +1,4 @@
-def candy(ratings):  # My try for O(1*N) solution but unsuccessful
+def candy(ratings):  # My try for O(1*N) wrongsol but unsuccessful
     min_candy = 1
     slider_dec, slider_inc = 0, 0
     for i in range(1, len(ratings)):

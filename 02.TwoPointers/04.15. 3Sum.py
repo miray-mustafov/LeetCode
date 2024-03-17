@@ -1,7 +1,7 @@
 """Constraints:
 n[i] + n[j] + n[k] == 0
 i != j, i != k, and j != k
-Notice that the solution set must not contain duplicate triplets.
+Notice that the wrongsol set must not contain duplicate triplets.
 3 <= n.length <= 3000
 """
 

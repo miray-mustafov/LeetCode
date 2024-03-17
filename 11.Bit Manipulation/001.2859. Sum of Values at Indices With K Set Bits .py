@@ -1,4 +1,4 @@
-def sumIndicesWithKSetBits(nums, k):  # My low efficiency solution
+def sumIndicesWithKSetBits(nums, k):  # My low efficiency wrongsol
     sum = 0
     for i in range(len(nums)):
         current_count_set_bits, current_i = 0, i

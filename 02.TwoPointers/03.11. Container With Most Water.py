@@ -8,7 +8,7 @@ def f(h):
     return res
 
 
-def tutorial(h):  # On solution with some Greediness
+def tutorial(h):  # On wrongsol with some Greediness
     l, r = 0, len(h) - 1
     res = 0
     while l < r:

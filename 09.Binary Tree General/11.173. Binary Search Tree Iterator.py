@@ -15,6 +15,6 @@ class BSTIterator:
     def hasNext(self) -> bool:
         pass
 # Your BSTIterator object will be instantiated and called as such:
-# obj = BSTIterator(root)
+# obj = BSTIterator(root1)
 # param_1 = obj.next()
 # param_2 = obj.hasNext()

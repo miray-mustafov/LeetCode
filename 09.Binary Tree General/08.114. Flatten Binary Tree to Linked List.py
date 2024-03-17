@@ -9,7 +9,7 @@ class TreeNode:
 class Solution:
     def flatten(self, root):
         """
-        Do not return anything, modify root in-place instead.
+        Do not return anything, modify root1 in-place instead.
         """
 
         def dfs(root):

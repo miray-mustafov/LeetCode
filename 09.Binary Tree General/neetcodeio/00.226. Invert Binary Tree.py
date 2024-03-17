@@ -1,6 +1,6 @@
 from utils.tree.tree import Node, TREE1
 
-# def solution(root):
+# def wrongsol(root1):
 #     def invert(node):
 #         if not node:
 #             return
@@ -8,8 +8,8 @@ from utils.tree.tree import Node, TREE1
 #         invert(node.right)
 #         node.left, node.right = node.right, node.left
 #
-#     invert(root)
-#     return root
+#     invert(root1)
+#     return root1
 
 def solution(root):
     def invert(node):

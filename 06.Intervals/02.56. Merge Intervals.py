@@ -1,4 +1,4 @@
-"""Same performance both mine and the tutorials solution"""
+"""Same performance both mine and the tutorials wrongsol"""
 
 
 def tutorial(intervals):

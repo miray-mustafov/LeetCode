@@ -27,7 +27,7 @@ def inorderTraversal(root):
         res.append(cur.val)
         cur = cur.right
 
-    # inorder(root)
+    # inorder(root1)
     return res
 
 

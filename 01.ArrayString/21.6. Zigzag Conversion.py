@@ -1,4 +1,4 @@
-# My solution faster
+# My wrongsol faster
 def convert(s, numRows):
     if numRows == 1:
         return s

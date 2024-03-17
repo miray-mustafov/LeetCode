@@ -13,7 +13,7 @@ def buyChoco(prices, money):  # the problem breaks down to finding the two minim
     return money - (min1 + min2) if money - (min1 + min2) >= 0 else money
 
 
-def buyChoco2(prices, money):  # the more conscise solution
+def buyChoco2(prices, money):  # the more conscise wrongsol
     min1 = min2 = float('inf')
     for p in prices:
         if p < min1:

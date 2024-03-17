@@ -24,7 +24,7 @@ class TreeNode:
 TREE1 = Node(4, Node(2, Node(1), Node(3)), Node(7, Node(6), Node(9)))
 
 
-def bfs(root):
+def bfs(root: TreeNode) -> list:
     if not root:
         return []
     from collections import deque
@@ -47,18 +47,17 @@ def make_tree_from_list(l):
     n = len(l)
     root = TreeNode(l[0])
     queue = deque([root])
-    for i in range(n):
+
+    i = 0
+    while queue:
         node = queue.popleft()
         lidx = i * 2 + 1
         ridx = i * 2 + 2
-        if lidx < n:
+        if lidx < n and l[lidx] is not None:
             node.left = TreeNode(l[lidx])
             queue.append(node.left)
-        if ridx < n:
+        if ridx < n and l[ridx] is not None:
             node.right = TreeNode(l[ridx])
             queue.append(node.right)
+        i += 1
     return root
-
-
-tree = make_tree_from_list([1, 2, 3, 4, 5])
-print(bfs(tree))

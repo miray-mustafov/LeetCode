@@ -11,7 +11,7 @@ def maxSlidingWindow(nums, k):
     return res
 
 #
-# def solution(nums, k):
+# def wrongsol(nums, k):
 #     output = []
 #     q = collections.deque()
 #     l = r = 0
@@ -35,5 +35,5 @@ nums2 = [1, 2, 0, 1, 9, 4, 2, 1, 4, 6, 7, 2]
 k2 = 5
 nums3 = [7, 6, 5, 4, 3, 2, 1, 0]  # Output: [3,3,5,5,6,7]
 
-# print(solution(nums, k))
-# print(solution(nums3, k))
+# print(wrongsol(nums, k))
+# print(wrongsol(nums3, k))
