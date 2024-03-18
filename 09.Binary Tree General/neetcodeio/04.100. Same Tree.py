@@ -39,8 +39,8 @@ def tutorial(p, q):
         return False
     left = tutorial(p.left, q.left)
     right = tutorial(p.right, q.right)
-
-    return left and right
+    boolean = left and right
+    return boolean
 
 
 p = make_tree_from_list([1, 2, 3])
