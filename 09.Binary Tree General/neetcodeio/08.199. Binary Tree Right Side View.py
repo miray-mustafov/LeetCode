@@ -6,15 +6,15 @@ def level_order_traversal(root):
     from collections import deque
     q = deque([root])
     while q:
-        cur_level = []
+        mostright_node_at_cur_level = None
         for i in range(len(q)):
             node = q.popleft()
             if node:
-                cur_level.append(node.val)
+                mostright_node_at_cur_level = node.val
                 q.append(node.left)
                 q.append(node.right)
-        if cur_level:
-            res.append(cur_level)
+        if mostright_node_at_cur_level:
+            res.append(mostright_node_at_cur_level)
     return res
 
 
