@@ -1,6 +1,21 @@
 from utils.tree.tree import TreeNode, make_tree_from_list
 
 
+def sol_iteratively(root, k):
+    node = root
+    n = 0
+    stack = []
+    while node or stack:
+        while node:
+            stack.append(node)
+            node = node.left
+        node = stack.pop()
+        n += 1
+        if n == k:
+            return node.val
+        node = node.right
+
+
 def sol(root, k):
     res = []
 
@@ -16,4 +31,4 @@ def sol(root, k):
 
 
 root = make_tree_from_list([5, 3, 6, 2, 4, None, None, 1])
-print(sol(root, 3))
+print(sol_iteratively(root, 3))
