@@ -6,9 +6,9 @@ def buildTree(preorder, inorder):
     if not preorder:
         return
     root: TreeNode = TreeNode(preorder[0])
-    mid = inorder.index(preorder[0])
-    root.left = buildTree(preorder[1:mid + 1], inorder[:mid])
-    root.right = buildTree(preorder[mid + 1:], inorder[mid + 1:])
+    split = inorder.index(preorder[0])
+    root.left = buildTree(preorder[1:split + 1], inorder[:split])
+    root.right = buildTree(preorder[split + 1:], inorder[split + 1:])
     return root
 
 
