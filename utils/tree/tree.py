@@ -30,11 +30,11 @@ def bfs(root: TreeNode) -> list:
     return res
 
 
-def make_tree_from_list(l):
+def make_tree_from_list(l, stringified=int):
     if not l:
         return ValueError('List empty!')  # [1,2,3,4,5]
     n = len(l)
-    root = TreeNode(l[0])
+    root = TreeNode(stringified(l[0]))
     queue = deque([root])
 
     i = 0
@@ -43,10 +43,10 @@ def make_tree_from_list(l):
         lidx = i * 2 + 1
         ridx = i * 2 + 2
         if lidx < n and l[lidx] is not None:
-            node.left = TreeNode(l[lidx])
+            node.left = TreeNode(stringified(l[lidx]))
             queue.append(node.left)
         if ridx < n and l[ridx] is not None:
-            node.right = TreeNode(l[ridx])
+            node.right = TreeNode(stringified(l[ridx]))
             queue.append(node.right)
         i += 1
     return root
