@@ -29,7 +29,7 @@ class WordDictionary:
                 else:
                     if c not in cur.children:
                         return False
-                    cur = cur.children[c]
+                    cur = cur.children[word[i]]
             return cur.endOfWord
 
         return dfs(self.root, 0)
