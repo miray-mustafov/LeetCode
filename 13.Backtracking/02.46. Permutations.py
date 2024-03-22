@@ -15,9 +15,30 @@ def permute(nums):
     return res
 
 
+def permute2(nums):
+    def backtrack(current):
+        if len(current) == len(nums):
+            result.append(current[:])
+            return
+        for num in nums:
+            if num not in current:
+                current.append(num)
+                backtrack(current)
+                current.pop()
+            a = 3
+        a = 5
+
+    result = []
+    backtrack([])
+    return result
+
+
 nums = [1, 2, 3]
-actual = permute(nums)
+actual = permute(nums.copy())
 actual.sort()
 expected = [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
-
 print(actual == expected)
+print()
+actual2 = permute2(nums.copy())
+actual2.sort()
+print(actual2 == expected)
