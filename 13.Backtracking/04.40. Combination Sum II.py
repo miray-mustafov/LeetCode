@@ -10,8 +10,8 @@ def combinationSum2(candidates, target):
         dfs(i + 1, total + c[i], sub)
 
         sub.pop()
-        while i + 1 < len(c) and c[i] == c[i + 1]:
-            i += 1
+        # while i + 1 < len(c) and c[i] == c[i + 1]:
+        #     i += 1
         dfs(i + 1, total, sub)
 
     candidates.sort()
