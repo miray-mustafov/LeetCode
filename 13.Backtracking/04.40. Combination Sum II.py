@@ -10,8 +10,8 @@ def combinationSum2(candidates, target):
         dfs(i + 1, total + c[i], sub)
 
         sub.pop()
-        # while i + 1 < len(c) and c[i] == c[i + 1]:
-        #     i += 1
+        while i + 1 < len(c) and c[i] == c[i + 1]:
+            i += 1
         dfs(i + 1, total, sub)
 
     candidates.sort()
@@ -30,7 +30,7 @@ def sol(candidates, target):
         if target <= 0:
             return
         prev = -1
-        for i in range(i,len(candidates)):
+        for i in range(i, len(candidates)):
             if candidates[i] == prev:
                 continue
             cur.append(candidates[i])
@@ -40,6 +40,7 @@ def sol(candidates, target):
 
     backtrack([], 0, target)
     return res
+
 
 # candidates = [10, 1, 2, 7, 6, 1, 5]
 candidates = [1, 2, 6, 1, 5]
