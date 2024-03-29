@@ -1,3 +1,21 @@
+def remindCombinationSum(c, target):
+    def dfs(i, total):
+        if total == target:
+            res.append(sub.copy())
+            return
+        if i >= len(c) or total > target:
+            return
+
+        sub.append(c[i])
+        dfs(i, total + c[i])
+        sub.pop()
+        dfs(i + 1, total)
+
+    res, sub = [], []
+    dfs(0, 0)
+    return res
+
+
 def combinationSum(c, target):
     res = []
     subset = []
@@ -19,4 +37,8 @@ def combinationSum(c, target):
 
 candidates = [2, 3, 6, 7]
 target = 7
-print(combinationSum(candidates, target))  # [[2,2,3],[7]]
+res1 = remindCombinationSum(candidates, target)
+res2 = combinationSum(candidates, target)
+print(res1)  # [[2,2,3],[7]]
+print(res2)  # [[2,2,3],[7]]
+print(res1 == res2)
