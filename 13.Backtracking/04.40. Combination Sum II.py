@@ -53,3 +53,27 @@ expected = [
 ]
 print(combinationSum2(candidates.copy(), target))
 print(sol(candidates.copy(), target))
+
+
+def remindSol(c, target):
+    def dfs(i, total):
+        if total == target:
+            res.append(sub.copy())
+            return
+        if i >= len(c) or total > target:
+            return
+
+        sub.append(c[i])
+        dfs(i + 1, total + c[i])
+        sub.pop()
+        while i + 1 < len(c) and c[i] == c[i + 1]:
+            i += 1
+        dfs(i + 1, total)
+
+    c.sort()
+    res, sub = [], []
+    dfs(0, 0)
+    return res
+
+
+print(remindSol(candidates.copy(), target))
