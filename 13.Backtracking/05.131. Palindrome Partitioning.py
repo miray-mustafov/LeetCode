@@ -6,8 +6,6 @@ def partition(s):
             l, r = l + 1, r - 1
         return True
 
-    res, part = [], []
-
     def dfs(i):
         if i >= len(s):
             res.append(part.copy())
@@ -17,11 +15,14 @@ def partition(s):
                 part.append(s[i:j + 1])
                 dfs(j + 1)
                 part.pop()
-            a=4
+            a = 4
+        a = 4
 
+    res, part = [], []
     dfs(0)
     return res
 
 
-string = 'aab'
-print(partition(string))
+string = 'aaba'
+result = partition(string)
+print(len(result), result)
