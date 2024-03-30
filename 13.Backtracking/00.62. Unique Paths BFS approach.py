@@ -1,20 +1,29 @@
-def uniquePaths(m, n):
+def uniquePaths(m, n):  # Try store the actual path too
     grid = [[0] * n for _ in range(m)]
     grid[-1][-1] = 1
-    res = [0]
+    count, paths, path = [0], [], []
 
     def dfs(r, c):
         if r >= m or c >= n:
             return
         if grid[r][c] == grid[-1][-1]:
-            res[0] += 1
+            count[0] += 1
+            paths.append(path.copy())
             return
+        path.append((r, c))
         dfs(r + 1, c)
+        path.pop()
+
+        path.append((r, c))
         dfs(r, c + 1)
+        path.pop()
 
     dfs(0, 0)
-    return res[0]
+    return count[0], paths
 
 
-print(uniquePaths(3, 7))  # 28
-print(uniquePaths(3, 2))  # 3
+count, paths = uniquePaths(3, 2)
+print(count, *paths, sep='\n')  # 3
+print()
+count, paths = uniquePaths(3, 7)
+print(count, *paths, sep='\n')  # 28
