@@ -3,6 +3,8 @@ class TrieNode:
         self.children = {}
         self.endOfWord = False
 
+    def __repr__(self):
+        return f"TrieNode {self.children}"
 
 class Trie:
 

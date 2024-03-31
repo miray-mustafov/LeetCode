@@ -1,4 +1,5 @@
-def uniquePaths(m, n):  # Try store the actual path too
+# just for exercise, it exceeds time limit
+def uniquePaths(m, n):  # store the actual path too
     grid = [[0] * n for _ in range(m)]
     grid[-1][-1] = 1
     count, paths, path = [0], [], []

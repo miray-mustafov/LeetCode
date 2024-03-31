@@ -34,7 +34,7 @@ def uniquePaths3(m, n):  # O(1) Math factorial calculations may become impractic
     return math.factorial(total_moves) // (math.factorial(down_moves) * math.factorial(total_moves - down_moves))
 
 
-m = 4
+m = 3
 n = 7
 # Output: 28
 print(uniquePaths(m, n))
