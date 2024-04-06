@@ -1,11 +1,14 @@
 from graphviz import Digraph
 from utils.tree.tree import TreeNode
 from collections import deque
+from utils.tree.tree import make_tree_from_list
 
-
-def view_tree(root_node: TreeNode):
+def view_tree(root_node: TreeNode | list):
     if not root_node:
         return print("tree empty")
+    if isinstance(root_node, list):
+        root_node = make_tree_from_list(root_node)
+
     dot = Digraph()
 
     # helper function to draw each node and its children
@@ -22,25 +25,3 @@ def view_tree(root_node: TreeNode):
 
     draw_node(root_node)
     dot.render(view=True)
-
-
-def make_tree_from_list(l, stringified=int):
-    if not l:
-        return ValueError('List empty!')  # [1,2,3,4,5]
-    n = len(l)
-    root = TreeNode(stringified(l[0]))
-    queue = deque([root])
-
-    i = 0
-    while queue:
-        node = queue.popleft()
-        lidx = i * 2 + 1
-        ridx = i * 2 + 2
-        if lidx < n and l[lidx] is not None:
-            node.left = TreeNode(stringified(l[lidx]))
-            queue.append(node.left)
-        if ridx < n and l[ridx] is not None:
-            node.right = TreeNode(stringified(l[ridx]))
-            queue.append(node.right)
-        i += 1
-    return root

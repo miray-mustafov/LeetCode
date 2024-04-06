@@ -1,6 +1,6 @@
 import heapq
 
-from utils.tree.visualize import view_tree, make_tree_from_list
+from utils.tree.tree import view_tree
 
 
 class KthLargest:
@@ -58,7 +58,6 @@ def build_max_heap(arr):
         max_heapify(arr, heap_size, i)
 
 
-
 def main():
     # root is at index 1
     # it can be at index zero but see here: https://www.quora.com/Why-do-indexes-for-heaps-start-at-1
@@ -67,8 +66,7 @@ def main():
     arr = [None, 0, 5, 20, 6, 12, 65, 1, 4, 9, 3, 89, 22, 25, 28, 10]
     build_max_heap(arr)
 
-    # root = make_tree_from_list(arr[1:])
-    # view_tree(root)
+    # view_tree(arr[1:])
 
     print(f'Heap: {arr[1:]}')
 

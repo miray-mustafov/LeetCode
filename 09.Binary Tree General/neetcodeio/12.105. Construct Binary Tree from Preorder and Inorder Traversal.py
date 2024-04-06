@@ -1,5 +1,4 @@
-from utils.tree.tree import TreeNode, make_tree_from_list
-from utils.tree.visualize import view_tree
+from utils.tree.tree import TreeNode, view_tree
 
 
 def buildTree(preorder, inorder):
@@ -15,5 +14,4 @@ def buildTree(preorder, inorder):
 preorder = [3, 9, 8, 20, 15, 7]
 inorder = [9, 8, 3, 15, 20, 7]
 buildTree(preorder, inorder)
-# root = make_tree_from_list([3, 9, 20, None, 8, 15, 7])
 # view_tree(root)
