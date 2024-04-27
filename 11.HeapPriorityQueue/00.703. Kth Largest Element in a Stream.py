@@ -71,6 +71,30 @@ class MyMaxHeapClass:
         parent_i = self.parent(len(self.heap) - 1)
         self.max_heapify(parent_i)
 
+    def heappop(self):
+        """
+        Removes and returns the largest element from the heap.
+
+        Raises:
+            IndexError: If the heap is empty.
+        """
+        if len(self.heap) == 0:
+            raise IndexError("Heap underflow")
+
+        # Get the largest element (at index 0)
+        largest = self.heap[0]
+
+        # Replace the root with the last element
+        self.heap[0] = self.heap[-1]
+
+        # Remove the last element (which is now the duplicate largest)
+        del self.heap[-1]
+
+        # Heapify to maintain the max-heap property
+        self.max_heapify(0)
+
+        return largest
+
     def build_max_heap(self):
         for i in range(len(self.heap) // 2, 0, -1):
             self.max_heapify(i)
@@ -84,8 +108,9 @@ def main_implementation():
     arr = [None, 0, 5, 20, 6, 12, 65, 1, 4, 9, 3, 89, 22, 25, 28, 10]
     my_heap = MyMaxHeapClass(arr)
     the_heap = my_heap.heap
-    # view_tree(the_heap[1:])
+    view_tree(the_heap[1:])
     print(f'Heap: {the_heap[1:]}')
-    #todo vij adda sus graphiz
+    # todo vij adda sus graphiz
+
 
 main_implementation()
