@@ -23,5 +23,5 @@ def f(tasks, n):
     return time
 
 
-tasks, n = ["A", "A", "A", "B", "B", "C"], 3  # 10
+tasks, n = ["A", "A", "A", "B", "B", "C"], 5  # 10
 print(f(tasks, n))
