@@ -14,9 +14,16 @@ def f(word1, word2):
         if not i2 < len(w2):
             i2, idx2 = 0, idx2 + 1
 
-    if i1 != 0 or i2 != 0:  # the edge case, means one is longer
+    # if i1 != 0 or i2 != 0:  # the edge case, means one is longer
+    if idx1 < len(word1) or idx2 < len(word2):
         return False
     return True
+
+
+def f2(word1, word2):  # no brain solution
+    w1 = ''.join(word1)
+    w2 = ''.join(word2)
+    return w1 == w2
 
 
 word1, word2 = ["ab", "c"], ["a", "bc"]
@@ -26,4 +33,9 @@ print(f(word1, word2))
 word1, word2 = ["a", "b", 'c'], ["abc"]
 print(f(word1, word2))  # True
 word1, word2 = ["a", "b", 'cc'], ["abc"]  # the edge case
+print(f(word1, word2))  # False
+
+print()
+word1 = ["a"]
+word2 = ["a", "b"]
 print(f(word1, word2))  # False
