@@ -1,3 +1,21 @@
+def insaneSolution(nums, k):
+    hmap = {}
+    freq = [[] for _ in range(len(nums) + 1)]
+
+    for n in nums:
+        hmap[n] = 1 + hmap.get(n, 0)
+
+    for n, count in hmap.items():
+        freq[count].append(n)
+
+    res = []
+    for i in range(len(freq)-1, 0, -1):
+        for n in freq[i]:
+            res.append(n)
+            if len(res) == k:
+                return res
+    return res
+
 def topk(nums, k):  # O nlogn + k
     from collections import defaultdict
     hmap = defaultdict(int)
@@ -17,7 +35,9 @@ def topk(nums, k):  # O nlogn + k
 nums = [1, 1, 1, 2, 2, 3]
 k = 2
 print(topk(nums, k))
+print(insaneSolution(nums, k))
 print()
 nums = [1]
 k = 1
 print(topk(nums, k))
+print(insaneSolution(nums, k))
