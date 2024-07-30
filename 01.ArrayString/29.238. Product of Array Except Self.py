@@ -1,3 +1,24 @@
+def tutorial(nums):  # O1 space
+    pass
+
+
+def noDivisionSolution(nums):  # On memory and runtime
+    output = []
+    prefix = [1, ]
+    postfix = nums[::]  # On
+    postfix.append(1)
+
+    for i in range(len(nums)):  # On
+        prefix.append(prefix[i] * nums[i])
+
+    for i in range(len(nums) - 1, -1, -1):  # On
+        postfix[i] = nums[i] * postfix[i + 1]
+
+    for i in range(len(nums)):  # On
+        output.append(prefix[i] * postfix[i + 1])
+    return output
+
+
 def productExceptSelf(nums):
     answer = []
     product_no_zeroes = 1
@@ -26,10 +47,24 @@ def productExceptSelf(nums):
 
 
 nums = [1, 2, 3, 4]  # [24,12,8,6]
-print(productExceptSelf(nums))
+print(productExceptSelf(nums.copy()))
+print(noDivisionSolution(nums.copy()))
+print(tutorial(nums.copy()))
+
+print()
 nums = [-1, 1, 0, -3, 3]  # [0,0,9,0,0]
 print(productExceptSelf(nums))
+print(noDivisionSolution(nums))
+print(tutorial(nums.copy()))
+
+print()
 nums = [0, 4, 0]
 print(productExceptSelf(nums))
+print(noDivisionSolution(nums))
+print(tutorial(nums.copy()))
+
+print()
 nums = [0, 0]
 print(productExceptSelf(nums))
+print(noDivisionSolution(nums))
+print(tutorial(nums.copy()))
