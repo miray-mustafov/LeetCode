@@ -1,13 +1,21 @@
 def addDigits(num):
-    num = str(num)
-    cur_sum = 0
-    while len(num) > 1:
+    def helper(num):
+        digits_sum = 0
+        num = str(num)
         for n in num:
-            cur_sum += int(n)
-        num = str(cur_sum)
-        cur_sum = 0
+            digits_sum += int(n)
+        return digits_sum
+
+    while num > 9:
+        cur_num = num % 9
+        if cur_num == 0:
+            num = helper(num)
+        else:
+            num = cur_num
+
     return num
 
-num = 38  # 2
+
+num = 388  # 2
 
 print(addDigits(num))
