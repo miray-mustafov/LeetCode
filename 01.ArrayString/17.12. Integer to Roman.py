@@ -54,10 +54,16 @@ def tutorial(num):
     return res
 
 
+print(tutorial(3300))
+
 print(tutorial(1994))
 print(tutorial(58))
 print(to_roman(10))
 print(to_roman(20))
 print(to_roman(30))
 print(to_roman(1500))
-# print(to_roman(1994) == 'MCMXCIV')
+print()
+print(tutorial(1984))
+print(to_roman(1450))
+print()
+print(to_roman(1994) == 'MCMXCIV')

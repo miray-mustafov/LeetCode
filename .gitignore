@@ -8,5 +8,6 @@ __pycache__/
 venv/
 *tst.py
 tst2.py
+tst.py
 tst3.py
 *.ignore
