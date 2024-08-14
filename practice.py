@@ -25,4 +25,28 @@ def romanToInt(s):
 
 s = "MCMXCIV"
 print(romanToInt(s))
+
+
 # 1994
+
+def intToRoman(num):
+    d = {
+        "I": 1,
+        "V": 5,
+        "X": 10,
+        "L": 50,
+        "C": 100,
+        "D": 500,
+        "M": 1000,
+    }
+
+    remainder = num % d
+
+
+n = 3749  # MMMDCCXLIX
+print(intToRoman(n))
+print(intToRoman(n) == 'MMMDCCXLIX')
+print()
+n = 1994  # "MCMXCIV"
+print(intToRoman(n))
+print(intToRoman(n) == 'MCMXCIV')
