@@ -1,27 +1,25 @@
-def f(matrix):
-    res = []
-    left, right = 0, len(matrix[0])
-    top, bottom = 0, len(matrix)
+def spiral_order(matrix):
+    result = []
+    while matrix:
+        result += matrix.pop(0)
+        if matrix and matrix[0]:
+            for row in matrix:
+                result.append(row.pop())
+        if matrix:
+            result += matrix.pop()[::-1]  # reversed copy of that
+        if matrix and matrix[0]:
+            for row in matrix[::-1]:
+                result.append(row.pop(0))
+    return result
 
-    while left < right and top < bottom:
 
-        for i in range(left, right):
-            res.append(matrix[top][i])
-        top += 1
+matrix = [
+    [0, 1, 2, 3, 2],
+    [11, 12, 13, 4, 2],
+    [10, 15, 14, 5, 2],
+    [9, 8, 7, 6, 2],
+    [9, 8, 7, 6, 2]
+]
 
-        for i in range(top, bottom):
-            res.append(matrix[i][right - 1])
-        right -= 1
-
-        if not (left < right and top < bottom):
-            break
-
-        for i in range(right - 1, left - 1, -1):
-            res.append(matrix[bottom - 1][i])
-        bottom -= 1
-
-        for i in range(bottom - 1, top - 1, -1):
-            res.append(matrix[i][left])
-        left += 1
-
-    return res
+print(spiral_order(matrix.copy()))
+# print(f(matrix.copy()))
